@@ -21,11 +21,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
       - name: Setup Node.js
         uses: ./.github/workflows/setup-node
 
@@ -35,11 +30,7 @@ jobs:
           static_site_generator: next
 
       - name: Build with Next.js
-        run: pnpm run build
-
-      - name: Check if out exists after export
-        run: |
-          ls -la ./out
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
