@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   // For DEV
   //reactStrictMode: true
-  basePath: "/",
+  basePath: "",
   output: "export",
   images: {
     unoptimized: true
