@@ -4,7 +4,8 @@ const nextConfig: NextConfig = {
   /* config options here */
   // For DEV
   //reactStrictMode: true
-  output: "export"
+  output: "export",
+  basePath: "/ariannelafraise-website"
 };
 
 export default nextConfig;
