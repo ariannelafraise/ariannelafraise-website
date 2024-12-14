@@ -5,7 +5,9 @@ const nextConfig: NextConfig = {
   // For DEV
   //reactStrictMode: true
   output: "export",
-  basePath: "/ariannelafraise-website"
+  // basePath: "/ariannelafraise-website"
+  // used this to fix CSS issue when website is on a subpath.
+  // no longer needed right now, since im using a custom domain for github pages
 };
 
 export default nextConfig;
