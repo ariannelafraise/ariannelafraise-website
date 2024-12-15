@@ -7,31 +7,50 @@ body {
 */
 
 @font-face {
-  font-family: Micro5;
-  src: url(../public/fonts/Micro5-Regular.ttf);
+  font-family: PixelifySans;
+  src: url(../public/fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf);
 }
 
-@font-face {
+body {
+  background-color: #000000;
+  font-weight: 100;
   font-family: PixelifySans;
-  src: url(../public/fonts/PixelifySans-VariableFont_wght.ttf);
+  color: #ffffff;
 }
 
 h1 {
   font-weight: 200;
+  font-size: 2.5vw;
 }
 
 p {
-  font-size: large;
+  font-size: 1vw;
+}
+
+a {
+  font-size: 1vw;
 }
 
 .important {
   color: #ff6fe7;
 }
 
-body {
-  background-color: #000000;
-  font-size: xx-large;
-  font-weight: 100;
-  font-family: PixelifySans;
-  color: #ffffff;
+@media screen and (max-width: 900px) {
+  p, a {
+    font-size: 3vw;
+  }
+  
+  h1 {
+    font-size: 6vw;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  p, a {
+    font-size: 2vw;
+  }
+  
+  h1 {
+    font-size: 5vw;
+  }
 }

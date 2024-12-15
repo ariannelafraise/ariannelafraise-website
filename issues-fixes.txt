@@ -1,0 +1,2 @@
+CI/CD Build does not generate ./out folder:
+https://github.com/gregrickaby/nextjs-github-pages/issues/57
