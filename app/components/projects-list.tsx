@@ -16,6 +16,11 @@ const ProjectsList = () => {
             "A web application to help transgender individuals find a new name",
             "https://github.com/ariannelafraise/shark-names-you-api"
         ),
+        new ProjectModel(
+            "Personal website",
+            "This website ʕっ•ᴥ•ʔっ",
+            "https://github.com/ariannelafraise/ariannelafraise-website"
+        )
     ];
 
     return(
