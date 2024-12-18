@@ -1,35 +1,19 @@
-import ProjectModel from "../models/project";
-import Project from "./project";
+import ProjectCard from "./project-card";
+
+import type { ProjectData } from "../models/project-data";
 
 import './projects-list.css'
 
-const ProjectsList = () => {
+interface Props {
+    projects: Array<ProjectData>
+};
 
-    const projects: ProjectModel[] = [
-        new ProjectModel(
-            "Bloometti",
-            "Level system Discord bot",
-            "https://github.com/ariannelafraise/Bloometti"
-        ),
-        new ProjectModel(
-            "Shark Names You",
-            "A web application to help transgender individuals find a new name",
-            "https://github.com/ariannelafraise/shark-names-you-api"
-        ),
-        new ProjectModel(
-            "Personal website",
-            "This website ʕっ•ᴥ•ʔっ",
-            "https://github.com/ariannelafraise/ariannelafraise-website"
-        )
-    ];
-
-    return(
+const ProjectsList: React.FC<Props> = ({projects}) => {
+    return (
         <div className="projects-list">
             <h1>~/Projects</h1>
             {
-                projects.map( project => {
-                    return <Project key={project.getName()} project={project}/>;
-                })
+                projects.map((p: ProjectData, index: number) => <ProjectCard key={index} data={p}/>)
             }
         </div>
     );

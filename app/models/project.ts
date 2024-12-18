@@ -1,25 +1,6 @@
-class ProjectModel {
-    private name : string;
-    private description : string;
-    private url : string;
+import { ProjectData } from "./project-data";
 
-    public constructor(name: string, description: string, url: string) {
-        this.name = name;
-        this.description = description;
-        this.url = url;
-    }
-
-    public getName(): string {
-        return this.name;
-    }
-
-    public getDescription(): string {
-        return this.description;
-    }
-
-    public getUrl(): string {
-        return this.url;
-    }
+export interface Project {
+    content: string,
+    data: ProjectData
 };
-
-export default ProjectModel;
