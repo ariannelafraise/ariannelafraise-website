@@ -8,7 +8,8 @@ export function fetchProjects() : Array<Project> {
     return fs.readdirSync('app/projects-md')
         .filter((fileName: string) => fileName.endsWith('.mdx'))
         .map((fileName: string) => { return matter(fs.readFileSync(`app/projects-md/${fileName}`, 'utf-8'))})
-        .map((gmFile : GrayMatterFile<string>) => ({ content: gmFile.content, data: gmFileDataToProjectData(gmFile.data) }));
+        .map((gmFile : GrayMatterFile<string>) => ({ content: gmFile.content, data: gmFileDataToProjectData(gmFile.data) }))
+        .sort((p1 : Project, p2: Project) => p2.data.priority - p1.data.priority);
 };
 
 export function fetchProjectsPaths() : Array<string> {
@@ -39,7 +40,8 @@ function gmFileDataToProjectData(data: {[key: string]: unknown}) : ProjectData {
     if (!projectData.id ||
         !projectData.name ||
         !projectData.description ||
-        !projectData.url)
+        !projectData.priority
+    )
         throw new Error('Invalid frontmatter detected.');
 
     return projectData;

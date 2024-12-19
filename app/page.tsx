@@ -1,9 +1,8 @@
 import Introduction from "./components/introduction";
 import ProjectsList from "./components/projects-list";
-
+import Footer from "./components/footer";
 import type { Project } from "./models/project";
-
-import { fetchProjects } from './lib/projectsUtils';
+import { fetchProjects } from './lib/projectsUtils';
 
 const getProjects = () :  Array<Project> => {
   return fetchProjects();
@@ -15,8 +14,8 @@ export default function Home() {
 
   return(
     <>
-      <div style={{color: "#ff9d47", textAlign: "center", border: "1px solid", }}>
-        <h2>/!\ Under construction /!\</h2>
+      <div className="border" style={{color: "#ff9d47", textAlign: "center" }}>
+        <h3>/!\ Under construction /!\</h3>
         <p>im working really hard yes yes</p>
       </div>
       
@@ -32,6 +31,12 @@ export default function Home() {
         <ProjectsList projects={projects.map((p: Project) => p.data)}/>
       }
       
+      <div className="border" style={{color: "#ff9d47", textAlign: "center", marginTop: "5vh" }}>
+        <h3>/!\ Under construction /!\</h3>
+        <p>im working really hard yes yes</p>
+      </div>
+
+      <Footer/>
     </>
   );
 };

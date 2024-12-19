@@ -1,72 +1,62 @@
 ---
 id: "bloometti"
 name: "Bloometti"
-description: "A levelling Discord bot"
-url: "https://github.com/ariannelafraise/Bloometti"
+description: "A levels Discord bot"
+priority: 9
 ---
-A Discord bot made with [Discord.js](https://discord.js.org/#/).
+![Bloometti Logo](https://github.com/ariannelafraise/Bloometti/raw/main/media/bloometti.png)
 
-## Levels system
-### Commands
-#### /profile [user: @mention]
-View your profile or the mentionned user's profile.
+A Discord bot made with Discord.js to implement a levels system.
 
-#### /ephemeral
-Toggle ephemeral mode. This mode makes all your interactions with the bot hidden from other users.
+## Links
+- [Source code](https://github.com/ariannelafraise/Bloometti)↗
+- [Add it to your server](https://discord.com/oauth2/authorize?client_id=486158492026142725&permissions=139586816000&integration_type=0&scope=bot+applications.commands)↗
 
-#### /setcolor [hexcode*: #FFFFFF]
-Set the color of your profile to a specific HEX code.
+## Commands
+- /profile [user: @mention]
+    - View your profile or the mentionned user's profile.
 
-### Formula
-experienceToNextLevel = (currentLevel * nextLevel) * 50
+- /ephemeral
+    - Toggle ephemeral mode. This mode makes all your interactions with the bot hidden from other users.
 
-### Configuration
-src/config/chatting.json
-```json
-{
-    "chattingExpMultiplier": 1.00,
-    "chattingExpDelayInSeconds": 60,
-    "chattingExpMinGain": 120,
-    "chattingExpMaxGain": 300
-}
-```
+- /setcolor [hexcode*: #FFFFFF]
+    - Set the color of your profile to a specific HEX code.
 
-## Setting up
-Create `src/config/config.json`
-```json
-{
-    "token": "YOUR_BOT_TOKEN",
-    "clientId": "YOUR_BOT_CLIENT_ID",
-    "guildId": "YOUR_BOT_GUILD_ID"
-}
-```
+## Future
+I am considering a complete rework of the levels system and a possible migration to TypeScript.
 
-## Deployment
-Deployed with Docker Compose:
-
-*Check Dockerfile and docker-compose.yml.*
-
+## Nerdy details
+### Deployed with Docker Compose
 Here are the containers:
-- The bot
-- A local MongoDB database on port 27017
-- [mongo-express](https://github.com/mongo-express/mongo-express) (web interface for MongoDB) on port 8081
+- Node.js container (running the bot)
+- MongoDB container
+- [mongo-express](https://github.com/mongo-express/mongo-express)↗ (a web interface for MongoDB) on port 8081
 
-### Start
-`$ sudo docker compose up`
+```yml
+services:
 
-## Backing up data
-`$ docker exec -it mongo bash`
-`$ cd data/db`
+  mongo:
+    container_name: mongo
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/mongo:/data/db
 
-### Export
-`$ mongoexport --db bloometti --port 27017 --collection users --out=users.json`
+  bot:
+    container_name: bot
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
 
-### Import
-`$ mongoimport --db bloometti --port 27017 --collection users --file users.json`
-
-*users.json will be located in `data/mongo` on the host system
-
-## Dependencies
-- [Discord.JS](https://www.npmjs.com/package/discord.js) (v14.15.2)
-- [Canvas](https://www.npmjs.com/package/canvas) (v2.11.2) (Image Manipulation)
-- [MongoDB](https://www.npmjs.com/package/mongodb) (v6.6.2)
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://mongo:27017
+      ME_CONFIG_BASICAUTH: false
+```

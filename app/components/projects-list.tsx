@@ -11,7 +11,7 @@ interface Props {
 const ProjectsList: React.FC<Props> = ({projects}) => {
     return (
         <div className="projects-list">
-            <h1>~/Projects</h1>
+            <h1>Projects</h1>
             {
                 projects.map((p: ProjectData, index: number) => <ProjectCard key={index} data={p}/>)
             }

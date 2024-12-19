@@ -8,24 +8,27 @@ body {
   font-weight: 100;
   font-family: PixelifySans;
   color: #ffffff;
-  text-align: center;
+}
+
+h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
+  font-size: inherit;
 }
 
 h1 {
-  font-weight: 200;
-  font-size: 2.5vw;
+  font-weight: 900;
 }
 
-p {
-  font-size: 1vw;
+h2 {
+  font-weight: 900;
 }
 
-a {
-  font-size: 1vw;
+a, a:visited {
+  color: #00f7ff;
+  text-decoration: none;
 }
 
-a:visited, a:hover, a:active {
-  color: inherit;
+a:hover {
+  text-decoration: underline;
 }
 
 strong {
@@ -33,22 +36,86 @@ strong {
   font-weight: 300;
 }
 
-@media screen and (max-width: 900px) {
-  p, a {
-    font-size: 3vw;
-  }
-  
+.border {
+  border: solid 3px;
+}
+
+code {
+  border-radius: 5px;
+}
+
+img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+.small-img {
+  max-width: 300px;
+}
+
+@media screen and (min-width: 0px) {
   h1 {
-    font-size: 6vw;
+    font-size: 8vw;
+  }
+
+  h2 {
+    font-size: 7.5vw;
+  }
+
+  h3 {
+    font-size: 7vw;
+  }
+
+  code {
+    font-size: 2.5vw;
+  }
+
+  body {
+    font-size: 4vw;
   }
 }
 
-@media screen and (max-width: 1500px) {
-  p, a {
-    font-size: 2vw;
+@media screen and (min-width: 600px) {
+  h1 {
+    font-size: 6.5vw;
   }
   
+  h2 {
+    font-size: 6vw;
+  }
+
+  h3 {
+    font-size: 5.5vw;
+  }
+
+  code {
+    font-size: 2.5vw;
+  }
+  
+  body {
+    font-size: 2.5vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
   h1 {
-    font-size: 5vw;
+    font-size: 3vw;
+  }
+  
+  h2 {
+    font-size: 2.5vw;
+  }
+
+  h3 {
+    font-size: 2vw;
+  }
+
+  code {
+    font-size: 1vw;
+  }
+  
+  body {
+    font-size: 1vw;
   }
 }

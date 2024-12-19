@@ -3,7 +3,8 @@ import './introduction.css'
 const Introduction = () => {
     return (
         <div className='introduction'>
-            <h1>/home/arianne</h1>
+            <h1>Arianne</h1>
+            <p>ʕっ•ᴥ•ʔっ</p>
             <p>weird strawberry girl, im an artist & IT nerd</p>
         </div>
     );

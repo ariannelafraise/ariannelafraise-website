@@ -1,9 +1,14 @@
 import { remark } from 'remark';
-import html from 'remark-html';
-
+import remarkRehype from 'remark-rehype';
+import rehypeHighlight from 'rehype-highlight';
+import rehypeStringify from 'rehype-stringify';
+import Link from 'next/link';
 
 import { fetchProjectsPaths, fetchProject } from '../../lib/projectsUtils';
 import { Project } from '../../models/project';
+import Footer from '../../components/footer';
+
+import './project-details.css';
 
 export async function generateStaticParams() {
     const projectsPaths: Array<string> = fetchProjectsPaths();
@@ -16,11 +21,12 @@ function getProject(id: string) : Project {
     return fetchProject(id);
 }
 
-async function processMarkdown(id: string) : Promise<string> {
-    const content : string = getProject(id).content;
+async function processMarkdown(markdown: string) : Promise<string> {
     const processedContent = await remark()
-        .use(html)
-        .process(content);
+        .use(remarkRehype, { allowDangerousHtml: true })
+        .use(rehypeHighlight)
+        .use(rehypeStringify, { allowDangerousHtml: true })
+        .process(markdown)
     return processedContent.toString();
 }
 
@@ -29,10 +35,17 @@ export default async function ProjectDetails({
 }: {
     params: Promise<{ id: string }>
 }) {
-    const processedContent: string = await processMarkdown((await params).id);
+    const project: Project = getProject((await params).id);
+    const processedContent: string = await processMarkdown(project.content);
     return (
         <>
-            <div dangerouslySetInnerHTML={{__html: processedContent}}/>
+            <div className='header'>
+                <h3>⟵&nbsp;&nbsp;<Link href={"/"}>Main Page</Link></h3>
+            </div>
+            <div className='markdown-content'>
+                <div dangerouslySetInnerHTML={{__html: processedContent}}/>
+            </div>
+            <Footer/>
         </>
     );
 };
