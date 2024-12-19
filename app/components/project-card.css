@@ -9,13 +9,6 @@
         width: 80%;
     }
 }
-  
-@media screen and (min-width: 600px) {
-    .project-card {
-        padding: 1vw;
-        width: 50%;
-    }
-}
 
 @media screen and (min-width: 1200px) {
     .project-card {

@@ -8,18 +8,19 @@ priority: 9
 
 A Discord bot made with Discord.js to implement a levels system.
 
-## Links
-- [Source code](https://github.com/ariannelafraise/Bloometti)↗
-- [Add it to your server](https://discord.com/oauth2/authorize?client_id=486158492026142725&permissions=139586816000&integration_type=0&scope=bot+applications.commands)↗
+[Add it to you Discord server](https://discord.com/oauth2/authorize?client_id=486158492026142725&permissions=139586816000&integration_type=0&scope=bot+applications.commands)↗
+
+## Github repository
+[![Repository card](https://github-readme-stats.vercel.app/api/pin/?username=ariannelafraise&repo=Bloometti)](https://github.com/ariannelafraise/Bloometti)
 
 ## Commands
-- /profile [user: @mention]
-    - View your profile or the mentionned user's profile.
+- **/profile** [user: @mention]
+    - View your profile or the mentioned user's profile.
 
-- /ephemeral
+- **/ephemeral**
     - Toggle ephemeral mode. This mode makes all your interactions with the bot hidden from other users.
 
-- /setcolor [hexcode*: #FFFFFF]
+- **/setcolor** [hexcode*: #FF00FF]
     - Set the color of your profile to a specific HEX code.
 
 ## Future
@@ -29,9 +30,9 @@ I am considering a complete rework of the levels system and a possible migration
 Deployed with Docker Compose.
 
 Here are the containers:
-- Node.js container (running the bot)
-- MongoDB container
-- [mongo-express](https://github.com/mongo-express/mongo-express)↗ (a web interface for MongoDB) on port 8081
+- **Node.js** container (running the bot)
+- **MongoDB** container
+- **Mongo-Express** container (a web interface for MongoDB) on port 8081
 
 ```yml
 services:

@@ -1,5 +1,6 @@
 import Introduction from "./components/introduction";
 import ProjectsList from "./components/projects-list";
+import Banner from './components/banner';
 import Footer from "./components/footer";
 import type { Project } from "./models/project";
 import { fetchProjects } from './lib/projectsUtils';
@@ -14,14 +15,13 @@ export default function Home() {
 
   return(
     <>
-      <div className="border" style={{color: "#ff9d47", textAlign: "center" }}>
-        <h3>/!\ Under construction /!\</h3>
-        <p>im working really hard yes yes</p>
-      </div>
-      
+      <Banner 
+        title="/!\ AMBER ALERT /!\"
+        message="all my strawberries have disappeared from my site. email: tip@federal-berry-of-investigation.gov with any tips, or contact me directly. thanks."
+        color="#ff7575"/>
       <Introduction/>
       {
-        projects.length == 0 
+        projects.length == 0
         ?
         <>
           <p>...</p>
@@ -30,12 +30,7 @@ export default function Home() {
         :
         <ProjectsList projects={projects.map((p: Project) => p.data)}/>
       }
-      
-      <div className="border" style={{color: "#ff9d47", textAlign: "center", marginTop: "5vh" }}>
-        <h3>/!\ Under construction /!\</h3>
-        <p>im working really hard yes yes</p>
-      </div>
-
+      {/* <Banner title="Title" message="Message" color="#ff00ff"/> */}
       <Footer/>
     </>
   );
