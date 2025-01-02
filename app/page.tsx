@@ -15,14 +15,10 @@ export default function Home() {
 
   return(
     <>
-      {
-      /*
       <Banner 
         title="/!\ AMBER ALERT /!\"
         message="all my strawberries have disappeared from my site. email: tip@federal-berry-of-investigation.gov with any tips, or contact me directly. thanks."
         color="#ff7575"/>
-        */
-      }
       <Introduction/>
       {
         projects.length == 0
