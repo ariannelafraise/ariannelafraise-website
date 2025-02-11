@@ -1,6 +1,9 @@
 .project-card {
-    padding: 1vw;
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 @media screen and (min-width: 0px) {
@@ -13,6 +16,12 @@
 @media screen and (min-width: 1200px) {
     .project-card {
         padding: 1vw;
-        width: 30%;
+        width: 28.5vw;
+        margin: 1vw;
+        font-size: 1vw;
+    }
+
+    h2 {
+        font-size: 1.5vw;
     }
 }

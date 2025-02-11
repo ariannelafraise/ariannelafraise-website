@@ -25,10 +25,10 @@ export default function Home() {
       {
         projects.length == 0
         ?
-        <>
+        <div className="center-text">
           <p>...</p>
-          <h2>No projects to show</h2> 
-        </>
+          <h4>No projects to show</h4> 
+        </div>
         :
         <ProjectsList projects={projects.map((p: Project) => p.data)}/>
       }

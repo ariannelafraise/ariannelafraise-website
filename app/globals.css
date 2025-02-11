@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #000000;
+  background-color: #ff6ad2;
   font-weight: 600;
   font-family: RetroGaming;
   color: #ffffff;
@@ -22,8 +22,12 @@ h2 {
   font-weight: 900;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #813476;
+}
+
 a, a:visited {
-  color: #00f7ff;
+  color: #bb2a8f;
   text-decoration: none;
 }
 
@@ -32,7 +36,7 @@ a:hover {
 }
 
 strong {
-  color: #ff6fe7;
+  color: #ff00b3;
 }
 
 .border {
@@ -53,6 +57,10 @@ img {
 
 .small-img {
   max-width: 15em;
+}
+
+.center-text {
+  text-align: center;
 }
 
 @media screen and (min-width: 0px) {
