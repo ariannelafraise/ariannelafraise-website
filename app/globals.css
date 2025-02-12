@@ -4,14 +4,10 @@
 }
 
 body {
-  background-color: #ff6ad2;
+  background-color: #fc8dd0;
   font-weight: 600;
   font-family: RetroGaming;
   color: #ffffff;
-}
-
-h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
-  font-size: inherit;
 }
 
 h1 {
@@ -27,8 +23,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a, a:visited {
-  color: #bb2a8f;
+  color: #ff00b3;
   text-decoration: none;
+  font-size: inherit;
 }
 
 a:hover {
@@ -36,7 +33,7 @@ a:hover {
 }
 
 strong {
-  color: #ff00b3;
+  color: #ac39da;
 }
 
 .border {
