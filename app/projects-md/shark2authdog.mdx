@@ -1,24 +1,22 @@
 ---
-id: "kerberos-hash-parser"
-name: "Kerberos hash parser"
-description: "A python script to parse Kerberos hashes, from Wireshark capture files containing KRB5 AS-REQ packets, that can be cracked into the user's password using hashcat and john the ripper."
+id: "shark2authdog"
+name: "shark2authdog"
+description: "A python script to parse Kerberos Pre-Authentication (PA) hashes (krb5pa), from Wireshark capture files containing KRB5 AS-REQ packets. These can be given to either hashcat or john the ripper to crack the user's password."
 priority: 10
 ---
-# Kerberos Hash Parser
+# shark2authdog
 
 [Github repository](https://github.com/ariannelafraise/kerberos-hash-parser)↗
 
-A python script to parse Kerberos hashes, from Wireshark capture files containing KRB5 AS-REQ packets, that can be cracked into the user's password using hashcat and john the ripper.
+A python script to parse **Kerberos Pre-Authentication** (PA) **hashes** (krb5pa), **from Wireshark** capture files containing KRB5 **AS-REQ** packets. These can be given to either **hashcat** or **john the ripper** to crack the user's password.
 
-Supports etype 18 (aes256-cts-hmac-sha1-96) & 23 (rc4-hmac), with *default salt strings*.
+Supports etype 18 (aes256-cts-hmac-sha1-96) & 23 (rc4-hmac), assuming *default salt strings*.
 
->The default salt string, if none is provided via pre-authentication data, is the concatenation of the principal's realm and name components, in order, with no separators.
-https://datatracker.ietf.org/doc/html/rfc4120#section-43
+>The *default salt string*, if none is provided via pre-authentication data, is the concatenation of the principal's realm and name components, in order, with no separators.
+[RFC4120 - Section 4](https://datatracker.ietf.org/doc/html/rfc4120#section-4)↗
 ## In action:
 
-Using a sample capture file from:
-
-https://wiki.wireshark.org/SampleCaptures#kerberos-and-keytab-file-for-decryption
+[Using a sample capture file](https://wiki.wireshark.org/SampleCaptures#kerberos-and-keytab-file-for-decryption)↗
 ```bash
 [arianne@kitaria kerberos-hash-parser]$ python khp.py krb-816.cap hashcat
 $krb5pa$23$des$DENYDC$DENYDCdes$32d396a914a4d0a78e979ba75d4ff53c1db7294141760fee05e434c12ecf8d5b9aa5839e09a2244893aff5f384f79c37883f154a
