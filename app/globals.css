@@ -3,8 +3,13 @@
   src: url(../public/fonts/RetroGaming/RetroGaming.ttf);
 }
 
+@font-face {
+  font-family: Montserrat;
+  src: url(../public/fonts/Montserrat.ttf);
+}
+
 body {
-  background-color: #fc8dd0;
+  background-color: #170c20;
   font-weight: 600;
   font-family: RetroGaming;
   color: #ffffff;
@@ -19,11 +24,15 @@ h2 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #813476;
+  color: #ffffff;
+}
+
+p {
+  color: #ffffff;
 }
 
 a, a:visited {
-  color: #ff00b3;
+  color: #ff7fd0;
   text-decoration: none;
   font-size: inherit;
 }
@@ -33,7 +42,7 @@ a:hover {
 }
 
 strong {
-  color: #ac39da;
+  color: #d469ff;
 }
 
 .border {
