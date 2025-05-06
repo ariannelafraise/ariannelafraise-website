@@ -1,6 +1,6 @@
 import Introduction from "./components/introduction";
 import ProjectsList from "./components/projects-list";
-import Banner from './components/banner';
+//import Banner from './components/banner';
 import Footer from "./components/footer";
 import type { Project } from "./models/project";
 import { fetchProjects } from './lib/projectsUtils';
