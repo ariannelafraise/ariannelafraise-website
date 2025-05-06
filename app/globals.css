@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: #170c20;
+  background-color: #32253e;
   font-weight: 600;
   font-family: RetroGaming;
   color: #ffffff;
@@ -32,7 +32,7 @@ p {
 }
 
 a, a:visited {
-  color: #ff7fd0;
+  color: #ffa1dc;
   text-decoration: none;
   font-size: inherit;
 }
@@ -42,7 +42,7 @@ a:hover {
 }
 
 strong {
-  color: #d469ff;
+  color: #96f8ff;
 }
 
 .border {
@@ -83,7 +83,7 @@ img {
   }
 
   code {
-    font-size: 2.5vw;
+    font-size: 3.5vw;
   }
 
   body {
@@ -105,7 +105,7 @@ img {
   }
 
   code {
-    font-size: 2.5vw;
+    font-size: 2vw;
   }
   
   body {
@@ -131,6 +131,6 @@ img {
   }
   
   body {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
 }
