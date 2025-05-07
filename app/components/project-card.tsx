@@ -11,9 +11,8 @@ interface Props {
 const ProjectCard: React.FC<Props> = ({data}) => {
     return (
         <div className='project-card border'>
-            <h2>{data.name}</h2>
+            <h2><Link href={`/projects/${data.id}`}>{data.name}</Link>↗</h2>
             <p>{data.description}</p>
-            <p><Link href={`/projects/${data.id}`}>Check it out</Link>↗</p>
         </div>
     );
 };
