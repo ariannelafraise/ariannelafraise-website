@@ -15,6 +15,10 @@ body {
   font-family: RetroGaming, monocode, sans-serif;
 }
 
+body, a {
+  font-family: RetroGaming, monocode, sans-serif;
+}
+
 p, code {
   font-family: monospace;
 }
