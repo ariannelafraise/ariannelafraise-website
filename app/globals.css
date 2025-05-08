@@ -10,17 +10,17 @@
 
 body {
   background-color: #32253e;
-  font-weight: 600;
+  font-weight: normal;
   color: #ffffff;
   font-family: RetroGaming, monocode, sans-serif;
 }
 
 body, a {
-  font-family: RetroGaming, monocode, sans-serif;
+  font-family: RetroGaming, sans-serif;
 }
 
 p, code {
-  font-family: monospace;
+  font-family: Arial, sans-serif;
 }
 
 h1 {
