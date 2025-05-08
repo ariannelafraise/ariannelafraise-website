@@ -11,8 +11,12 @@
 body {
   background-color: #32253e;
   font-weight: 600;
-  font-family: RetroGaming;
   color: #ffffff;
+  font-family: RetroGaming, monocode, sans-serif;
+}
+
+p, code {
+  font-family: monospace;
 }
 
 h1 {
@@ -50,9 +54,7 @@ strong {
 }
 
 code {
-  font-weight: 100;
   border-radius: 5px;
-  font-family: RetroGaming;
 }
 
 img {
