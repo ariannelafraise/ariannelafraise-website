@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: #32253e;
+  background-color: #310647;
   font-weight: normal;
   color: #ffffff;
   font-family: RetroGaming, monocode, sans-serif;
@@ -40,7 +40,7 @@ p {
 }
 
 a, a:visited {
-  color: #ffa1dc;
+  color: #e284ff;
   text-decoration: none;
   font-size: inherit;
 }
