@@ -1,0 +1,84 @@
+---
+id: "hived"
+name: "Hived"
+description: "Hived is a extensible tool built on top of the Linux Audit framework that helps to setup honeypots on your linux machines. It provides an extension/plugin API, to add custom features."
+priority: 100
+---
+# Hived
+Hived is a extensible tool built on top of the Linux Audit framework that helps to setup honeypots on your linux machines.
+It provides an extension/plugin API, to add custom features.
+
+[Github repository](https://github.com/ariannelafraise/hived)↗
+
+## Context
+The Linux Audit framework records various system calls and logs them.
+The Auditd daemon sends logs to either the `audit.log` file or Audispd.
+The latter feeds those logs to registered plugins. This is where Hived comes in.
+It forwards those events to **event handlers** that analyze them and act accordingly.
+They could send email notifications to sysadmins, or even take proper action to eliminate a threat.
+If it can be programmed, it can be done. That is the goal of Hived: Intrusion Detection and Prevention (IPS/IDS).
+
+Other more fun idea of Hived usage: perhaps a tool to put in place in a CTF box to add more challenge?
+What if, when the player does certain actions like accessing an honey pot file, the box would harden its security?
+Or cut the connection and reset progress? That'd be interesting! :p
+
+![audit framework diagram](https://www.researchgate.net/profile/Muhammad-Zam-Zam/publication/355181208/figure/fig2/AS:1078393193922567@1634120381586/Linux-Auditd-Architecture.ppm)
+
+[(source)](https://www.researchgate.net/figure/Linux-Auditd-Architecture_fig2_355181208)↗
+
+### Interesting resources to better understand the Audit Framework
+[Red Hat Documentation - Chapter 7. System Auditing](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/security_guide/chap-system_auditing)↗
+
+### Where do events come from?
+The Audit Framework uses rules to know which events it should record, and in what way.
+You can also associate keys to rules to better identify events that were recorded thanks to the rules.
+Here is an example:
+
+```text
+-a always,exit -F arch=b64 -F dir=/home/arianne/honeypot_folder -F perm=rw -F key=filesystem
+```
+
+You can better understand rules with [this incredible article from Red Hat](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/security_guide/sec-Defining_Audit_Rules_and_Controls#sec-Defining_Audit_Rules_with_auditctl)↗.
+
+### Understanding events and logs
+Events are composed of logically tied logs. Those logs are strings composed of key/value
+entries separated by white spaces. Here is an example:
+
+```text
+type=CWD msg=audit(1752022100.814:201): cwd="/home/arianne"
+```
+
+As you can see, logs have different types. The most important ones are `SYSCALL` and `EOE`.
+SYSCALL usually marks the start of an event, while EOE (End Of Event) marks,
+you guessed it, the end of and event. That is how we can identify all the logs tied to a specific event.
+A full event would look like this:
+
+```text
+type=SYSCALL msg=audit(1752022100.814:201): arch=c000003e syscall=257 success=yes exit=3 a0=ffffff9c a1=563b51ddd6e0 a2=90800 a3=0 items=1 ppid=10720 pid=11390 auid=1000 uid=1000 gid=1000 euid=1000 suid=1000 fsuid=1000 egid=1000 sgid=1000 fsgid=1000 tty=pts1 ses=1 comm="ls" exe="/usr/bin/ls" key="filesystem"ARCH=x86_64 SYSCALL=openat AUID="arianne" UID="arianne" GID="arianne" EUID="arianne" SUID="arianne" FSUID="arianne" EGID="arianne" SGID="arianne" FSGID="arianne"
+type=CWD msg=audit(1752022100.814:201): cwd="/home/arianne"
+type=PATH msg=audit(1752022100.814:201): item=0 name="honeypot_folder/" inode=10885709 dev=103:06 mode=040755 ouid=1000 ogid=1000 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="arianne" OGID="arianne"
+type=PROCTITLE msg=audit(1752022100.814:201): proctitle=6C73002D2D636F6C6F723D6175746F00686F6E6579706F745F666F6C6465722F
+type=EOE msg=audit(1752022100.814:201):
+```
+
+This is an event that was triggered by accessing a folder using the `ls` command.
+We can see that this event was recorded by the rule that we defined earlier, thanks to the key.
+
+**the PROCTITLE log gives the command that was executed in an HEX format. You can replace '00' with '20' to have valid white spaces. 6C73002D2D636F6C6F723D6175746F00686F6E6579706F745F666F6C6465722F = ls --color=auto honeypot_folder/**
+
+## How does Hived function?
+**Refer to this UML class diagram to better understand this section.**
+
+![uml diagram](https://github.com/ariannelafraise/hived/blob/main/documentation/hived.drawio.png?raw=true)
+
+There are two main components: Hived and Hivectl.
+### Hived
+The daemon ran by Audispd that receives all events recorded by the framework.
+All events are listened by the AudispdListener, which dynamically loads all event handlers
+defined in the `event_handlers` directory and alerts them of new events by following the Observer design pattern.
+These event handlers can also use notifiers to send out notifications, like emails.
+
+**Running Hived on its own has no effect, it needs to be run by Audispd to receive events. However, it allows you to feed it your own logs for testing purposes.**
+
+### Hivectl
+A CLI tool to configure Hived and the Audit framework. It dynamically loads plugins defined in the `plugins` directory.
