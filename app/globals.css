@@ -63,8 +63,7 @@ code {
 }
 
 img {
-  width: 100%;
-  max-width: 30em;
+  max-width: 100%;
   height: auto;
 }
 
