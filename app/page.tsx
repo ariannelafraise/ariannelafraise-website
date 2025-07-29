@@ -34,9 +34,9 @@ export default function Home() {
       }
       {
         <Banner 
-          title="/!\ AMBER ALERT /!\"
-          message="all my strawberries have disappeared from my site. email: tip@federal-berry-of-investigation.gov with any tips, or contact me directly. thanks."
-          color="#ff7575"/> 
+          title="/!\ under construction /!\"
+          message=""
+          color="#ffac75ff"/> 
       }
       {/* <Banner title="Title" message="Message" color="#ff00ff"/> */}
       <Footer/>
