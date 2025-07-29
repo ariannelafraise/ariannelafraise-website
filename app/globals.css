@@ -55,7 +55,8 @@ strong {
 }
 
 .border {
-  border: solid 3px;
+  border-style: dashed;
+  border-width: 3px;
 }
 
 code {
