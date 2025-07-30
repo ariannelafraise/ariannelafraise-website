@@ -12,7 +12,7 @@ It provides an extension/plugin API, to add custom features.
 
 ## Context
 The Linux Audit framework records various system calls and logs them.
-The Auditd daemon sends logs to either the `audit.log` file or Audispd.
+The Auditd daemon sends logs to either the audit.log file or Audispd.
 The latter feeds those logs to registered plugins. This is where Hived comes in.
 It forwards those events to **event handlers** that analyze them and act accordingly.
 They could send email notifications to sysadmins, or even take proper action to eliminate a threat.
@@ -48,7 +48,7 @@ entries separated by white spaces. Here is an example:
 type=CWD msg=audit(1752022100.814:201): cwd="/home/arianne"
 ```
 
-As you can see, logs have different types. The most important ones are `SYSCALL` and `EOE`.
+As you can see, logs have different types. The most important ones are SYSCALL and EOE.
 SYSCALL usually marks the start of an event, while EOE (End Of Event) marks,
 you guessed it, the end of and event. That is how we can identify all the logs tied to a specific event.
 A full event would look like this:
@@ -61,7 +61,7 @@ type=PROCTITLE msg=audit(1752022100.814:201): proctitle=6C73002D2D636F6C6F723D61
 type=EOE msg=audit(1752022100.814:201):
 ```
 
-This is an event that was triggered by accessing a folder using the `ls` command.
+This is an event that was triggered by accessing a folder using the ls command.
 We can see that this event was recorded by the rule that we defined earlier, thanks to the key.
 
 **the PROCTITLE log gives the command that was executed in an HEX format. You can replace '00' with '20' to have valid white spaces. 6C73002D2D636F6C6F723D6175746F00686F6E6579706F745F666F6C6465722F = ls --color=auto honeypot_folder/**
@@ -75,10 +75,10 @@ There are two main components: Hived and Hivectl.
 ### Hived
 The daemon ran by Audispd that receives all events recorded by the framework.
 All events are listened by the AudispdListener, which dynamically loads all event handlers
-defined in the `event_handlers` directory and alerts them of new events by following the Observer design pattern.
+defined in the event_handlers directory and alerts them of new events by following the Observer design pattern.
 These event handlers can also use notifiers to send out notifications, like emails.
 
 **Running Hived on its own has no effect, it needs to be run by Audispd to receive events. However, it allows you to feed it your own logs for testing purposes.**
 
 ### Hivectl
-A CLI tool to configure Hived and the Audit framework. It dynamically loads plugins defined in the `plugins` directory.
+A CLI tool to configure Hived and the Audit framework. It dynamically loads plugins defined in the plugins directory.
