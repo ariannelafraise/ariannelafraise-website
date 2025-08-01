@@ -1,10 +1,8 @@
-[![publish-to-github-pages](https://github.com/ariannelafraise/ariannelafraise-website/actions/workflows/publish.yml/badge.svg)](https://github.com/ariannelafraise/ariannelafraise-website/actions/workflows/publish.yml)
-
 # Personal website
 
 Access it here: https://arianne.paintilya.dev
 
-<img class="small-img" alt="Github Actions status badge" src="https://github.com/ariannelafraise/ariannelafraise-website/actions/workflows/publish.yml/badge.svg" />
+<img class="small-img" alt="Github Actions status badge" src="https://github.com/ariannelafraise/ariannelafraise-website/actions/workflows/publish.yml/badge.svg"/>
 
 A website to showcase my projects.
 
