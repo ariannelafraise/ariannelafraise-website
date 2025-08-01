@@ -2,8 +2,6 @@
 
 Access it here: https://arianne.paintilya.dev
 
-<img class="small-img" alt="Github Actions status badge" src="https://github.com/ariannelafraise/ariannelafraise-website/actions/workflows/publish.yml/badge.svg"/>
-
 A website to showcase my projects.
 
 ## Technical details
