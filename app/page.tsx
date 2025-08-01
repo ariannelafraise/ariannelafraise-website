@@ -32,12 +32,6 @@ export default function Home() {
         :
         <ProjectsList projects={projects.map((p: Project) => p.data)}/>
       }
-      {
-        <Banner 
-          title="/!\ under construction /!\"
-          message=""
-          color="#ffac75ff"/> 
-      }
       {/* <Banner title="Title" message="Message" color="#ff00ff"/> */}
       <Footer/>
     </>

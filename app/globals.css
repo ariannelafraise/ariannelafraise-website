@@ -19,7 +19,7 @@ body, a {
   font-family: RetroGaming, sans-serif;
 }
 
-p, code {
+p, code, li {
   font-family: Arial, sans-serif;
   margin-left: 1em;
 }
@@ -41,7 +41,7 @@ p {
 }
 
 a, a:visited {
-  color: #e284ff;
+  color: #bb84ff;
   text-decoration: none;
   font-size: inherit;
 }
@@ -51,7 +51,7 @@ a:hover {
 }
 
 strong {
-  color: #96f8ff;
+  color: #ff0090;
 }
 
 .border {
@@ -66,6 +66,7 @@ code {
 img {
   max-width: 100%;
   height: auto;
+  border-radius: 1em;
 }
 
 .small-img {
@@ -78,15 +79,15 @@ img {
 
 @media screen and (min-width: 0px) {
   h1 {
-    font-size: 7.5vw;
+    font-size: 6vw;
   }
 
   h2 {
-    font-size: 7vw;
+    font-size: 5vw;
   }
 
   h3 {
-    font-size: 6.5vw;
+    font-size: 4vw;
   }
 
   code {
@@ -100,15 +101,15 @@ img {
 
 @media screen and (min-width: 600px) {
   h1 {
-    font-size: 5.5vw;
+    font-size: 5vw;
   }
   
   h2 {
-    font-size: 5vw;
+    font-size: 4vw;
   }
 
   h3 {
-    font-size: 4.5vw;
+    font-size: 3vw;
   }
 
   code {
@@ -120,7 +121,7 @@ img {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1000px) {
   h1 {
     font-size: 2.5vw;
   }

@@ -1,35 +1,27 @@
 ---
 id: "discord-cosmetics-automation"
 name: "Discord Cosmetics Automation"
-description: "A python tool to automatically switch cosmetics on Discord."
+description: "A python script that uses the Discord client API to switch cosmetics (avatar decorations and profile effects) at random."
 priority: 3
 ---
-# Discord Cosmetics Automation
+<h1 style="color: #ff759aff;">Discord Cosmetics Automation</h1>
+
+![avatar decorations switching animation](/media/discord-cosmetics-automation/avatar-decorations.gif)
 
 [Github repository](https://github.com/ariannelafraise/discord-cosmetics-automation)↗
 
-**/!\ Use at your own risks /!\\**
+A python script that uses the Discord client API to switch cosmetics (avatar decorations and profile effects) at random.
+You can also define an interval of time for it to change automatically.
 
-This is a python tool to automatically switch cosmetics (randomly). Cosmetics are: avatar decorations and profile effects.
-
-## Installation
-1. Clone this repository
-```sh
-git clone https://github.com/ariannelafraise/discord-cosmetics-automation.git
-```
-2. Install the requirements
-```sh
-pip install -r requirements.txt
-```
-3. Create a `.env` file containing:
-```env
-TOKEN=YOUR_DISCORD_TOKEN
-```
+## Skills I used for this project
+- API reverse engineering
+- Forging HTTP requests
+- Command-line interface conception
 
 ## Usage
 Loop mode (**-l**): **Be careful of rate limits**. This tool only allows as low as a 10 minutes cooldown to prevent rate limits.
 
-Switching all cosmetics once (**-b**):
+Switching all cosmetics (**-b**):
 ```sh
 python dca.py -b
 ```
@@ -43,12 +35,5 @@ python dca.py -p
 ```
 Switching avatar decoration only (**-a**):
 ```sh
-python dca.py -a -l 15
+python dca.py -a
 ```
-
-## Conversion to a Linux command
-1. Add a python shebang
-2. Rename `dca.py` to `dca`
-3. Add execution permission to `dca`
-4. Add to path
-5. Test it: `dca --version`

@@ -6,6 +6,10 @@
     text-align: left;
 }
 
+h1 {
+    color: #ff6c6c;
+}
+
 @media screen and (min-width: 0px) {
     .markdown-content > div {
         width: 95%;
