@@ -1,6 +1,6 @@
 # Personal website
 
-Access it here: https://arianne.paintilya.dev
+Access it here: https://arianne.dev
 
 A website to showcase my projects.
 
