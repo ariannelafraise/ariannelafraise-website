@@ -1,0 +1,25 @@
+.markdown-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
+    text-align: left;
+}
+
+@media screen and (min-width: 0px) {
+    .markdown-content > div {
+        width: 95%;
+    }
+}
+  
+@media screen and (min-width: 600px) {
+    .markdown-content > div {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .markdown-content > div {
+        width: 60%;
+    }
+}

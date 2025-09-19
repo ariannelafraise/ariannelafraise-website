@@ -1,0 +1,16 @@
+@media screen and (max-width: 1199px) {
+    .projects-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2vw;
+        text-align: center;
+    }
+}
+  
+@media screen and (min-width: 1200px) {
+    .projects-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

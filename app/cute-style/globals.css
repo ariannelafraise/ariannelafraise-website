@@ -9,14 +9,14 @@
 }
 
 body {
-  background-color: #2b1a32;
+  background-color: #171419;
   font-weight: normal;
   color: #ffffff;
-  font-family: Montserrat, monocode, sans-serif;
+  font-family: RetroGaming, monocode, sans-serif;
 }
 
 body, a {
-  font-family: Montserrat, sans-serif;
+  font-family: RetroGaming, sans-serif;
 }
 
 p, code, li {
@@ -41,7 +41,7 @@ p {
 }
 
 a, a:visited {
-  color: #ff3b9d;
+  color: #bb84ff;
   text-decoration: none;
   font-size: inherit;
 }
@@ -55,9 +55,8 @@ strong {
 }
 
 .border {
-  border-style: solid;
-  border-radius: 1em;
-  border-width: 1px;
+  border-style: dashed;
+  border-width: 3px;
 }
 
 code {
