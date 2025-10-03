@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: #2b1a32;
+  background-color: #1f1324;
   font-weight: normal;
   color: #ffffff;
   font-family: Montserrat, monocode, sans-serif;
@@ -41,7 +41,7 @@ p {
 }
 
 a, a:visited {
-  color: #ff3b9d;
+  color: #ff82ec;
   text-decoration: none;
   font-size: inherit;
 }
