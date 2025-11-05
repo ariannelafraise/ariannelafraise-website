@@ -1,6 +1,6 @@
 @font-face {
-  font-family: RetroGaming;
-  src: url(../public/fonts/RetroGaming/RetroGaming.ttf);
+  font-family: custom;
+  src: url(../public/fonts/GoogleSansCode/GoogleSansCode-VariableFont_wght.ttf);
 }
 
 @font-face {
@@ -9,18 +9,18 @@
 }
 
 body {
-  background-color: #1f1324;
+  background-color: #000000;
   font-weight: normal;
   color: #ffffff;
-  font-family: Montserrat, monocode, sans-serif;
+  font-family: custom, monocode, sans-serif;
 }
 
 body, a {
-  font-family: Montserrat, sans-serif;
+  font-family: custom, monocode, sans-serif;
 }
 
 p, code, li {
-  font-family: Arial, sans-serif;
+  font-family: custom, Arial, sans-serif;
   margin-left: 1em;
 }
 
@@ -56,8 +56,7 @@ strong {
 
 .border {
   border-style: solid;
-  border-radius: 1em;
-  border-width: 1px;
+  border-width: 2px;
 }
 
 code {
