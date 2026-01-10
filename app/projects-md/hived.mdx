@@ -1,60 +1,12 @@
 ---
 id: "hived"
 name: "Hived"
-description: "Hived is a extensible tool built on top of the Linux Audit framework that helps to setup honeypots on your linux machines. It provides an extension/plugin API, to add custom features."
+description: "Linux Audit Event Processing Framework."
 priority: 100
 ---
 <h1 style="color: #ffcd42;">Hived</h1>
 
-Hived is a extensible tool built on top of the Linux Audit framework that helps to setup honeypots on your linux machines.
-It provides an extension/plugin API to add custom features depending on your needs.
+A Linux Audit Event Processing Framework that I'm currently working on.
+More information to come.
 
 [Github repository](https://github.com/ariannelafraise/hived)↗
-
-## Skills I am using/developing for this project
-- Software documentation
-- Using and adapting design patterns
-- Extensibility APIs
-- IDS/IPS programming
-- Event/incident driven security
-- Command-line interface conception
-- Python
-
-## Context
-The Linux Audit framework enables you to log all kinds of events happening on a Linux machine.
-The Auditd daemon sends these logs to either the audit.log file or the Audispd daemon.
-This daemon, in short, feeds those logs to various programs that register to it. This is where Hived comes in.
-It forwards those events to event handlers that analyze them and act accordingly.
-They could send email notifications to sysadmins, or even take proper action to eliminate a threat.
-If it can be programmed, it can be done. That is the goal of Hived: Intrusion Detection and Prevention (IPS/IDS).
-
-![audit framework diagram](https://www.researchgate.net/profile/Muhammad-Zam-Zam/publication/355181208/figure/fig2/AS:1078393193922567@1634120381586/Linux-Auditd-Architecture.ppm)
-
-[(source)](https://www.researchgate.net/figure/Linux-Auditd-Architecture_fig2_355181208)↗
-
-### Alternative usage
-Hived can also be used in less security-oriented scenarios. For example, it could be a tool to put in place
-in a CTF box to add more challenge by reacting to the player's actions. Maybe when he does certain actions like
-accessing an honey pot file, the box could harden its security or cut the connection and reset progress?
-
-### Interesting resources to better understand the Audit Framework
-[Red Hat Documentation - Chapter 7. System Auditing](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/security_guide/chap-system_auditing)↗
-
-[Red Hat - Audit System Reference](https://access.redhat.com/articles/4409591?extIdCarryOver=true&sc_cid=701f2000001Css5AAC#audit-record-types-2)↗
-
-## How does it work?
-**Refer to this UML class diagram to better understand this section.**
-
-![uml diagram](https://github.com/ariannelafraise/hived/blob/main/documentation/hived.drawio.png?raw=true)
-
-There are two main components: Hived and Hivectl.
-### Hived
-The daemon ran by Audispd that receives all events recorded by the framework.
-All events are listened by the AudispdListener, which dynamically loads all event handlers
-defined in the event_handlers directory and alerts them of new events by following the Observer design pattern.
-These event handlers can also use notifiers to send out notifications, like emails.
-
-**Running Hived on its own has no effect, it needs to be run by Audispd to receive events. However, it allows you to feed it your own logs for testing purposes.**
-
-### Hivectl
-A CLI tool to configure Hived and the Audit framework. It dynamically loads plugins defined in the plugins directory.
