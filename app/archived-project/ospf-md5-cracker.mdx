@@ -9,12 +9,6 @@ priority: 9
 
 A python tool to crack OSPF type 2 cryptographic authentication (MD5) secret keys from Wireshark capture files containing Hello Packets.
 
-## Skills I used for this project
-- Researching and understanding a network protocol
-- Packets analysis (with Wireshark)
-- Parsing network capture files with Python
-- Cryptography
-
 ## How it works
 Authenticated packets have a 'Auth Crypt Data' field containing a MD5 hash obtained by concatenating the OSPF packet's bytes
 with a secret key. Since all routers in the network know the secret key, they make their own hash and compare the two. If both match,

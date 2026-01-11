@@ -16,12 +16,6 @@ Supports etype 18 (aes256-cts-hmac-sha1-96) & 23 (rc4-hmac), assuming *default s
 *"The default salt string, if none is provided via pre-authentication data, is the concatenation of the principal's realm and name components, in order, with no separators."*
 [RFC4120 - Section 4](https://datatracker.ietf.org/doc/html/rfc4120#section-4)↗
 
-## Skills I used for this project
-- Researching and understanding a network protocol
-- Packets analysis (with Wireshark)
-- Parsing network capture files with Python
-- Cryptography
-
 ## How it works
 To authenticate, the user sends a AS-REQ packet (pre-auth) containing a timestamp that is encrypted
 using a predefined mechanism (from etype) which includes using a secret key derived from the user's
