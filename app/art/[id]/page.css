@@ -1,0 +1,21 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
+    text-align: left;
+}
+
+@media screen and (max-width: 1199px) {
+    .content img {
+        height: 100%;
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .content img {
+        height: 80vh;
+        width: auto;
+    }
+}
