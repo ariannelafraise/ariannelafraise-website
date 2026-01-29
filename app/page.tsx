@@ -3,13 +3,20 @@ import ProjectsList from "./components/projects-list";
 import Footer from "./components/footer";
 import type { Project } from "./models/project";
 import { fetchProjects } from "./lib/projectsUtils";
+import ArtList from "./components/art-list";
+import { fetchAllArt } from "./lib/artUtils";
 
 const getProjects = (): Array<Project> => {
   return fetchProjects();
 };
 
+const getArts = (): Array<string> => {
+  return fetchAllArt();
+};
+
 export default function Home() {
   const projects: Array<Project> = getProjects();
+  const arts: Array<string> = getArts();
 
   return (
     <>
@@ -26,7 +33,10 @@ export default function Home() {
           <h4>No projects to show</h4>
         </div>
       ) : (
-        <ProjectsList projects={projects.map((p: Project) => p.data)} />
+        <>
+          <ProjectsList projects={projects.map((p: Project) => p.data)} />
+          <ArtList arts={arts} />
+        </>
       )}
       {/*
         <>

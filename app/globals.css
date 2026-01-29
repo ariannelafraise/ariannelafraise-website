@@ -1,144 +1,153 @@
 @font-face {
-  font-family: custom;
-  src: url(../public/fonts/GoogleSansCode/GoogleSansCode-VariableFont_wght.ttf);
+    font-family: custom;
+    src: url(../public/fonts/GoogleSansCode/GoogleSansCode-VariableFont_wght.ttf);
 }
 
 @font-face {
-  font-family: Montserrat;
-  src: url(../public/fonts/Montserrat.ttf);
+    font-family: Montserrat;
+    src: url(../public/fonts/Montserrat.ttf);
 }
 
 body {
-  background-color: #000000;
-  font-weight: normal;
-  color: #ffffff;
-  font-family: custom, monocode, sans-serif;
+    background-color: #000000;
+    font-weight: normal;
+    color: #ffffff;
+    font-family: custom, monocode, sans-serif;
 }
 
-body, a {
-  font-family: custom, monocode, sans-serif;
+body,
+a {
+    font-family: custom, monocode, sans-serif;
 }
 
-p, code, li {
-  font-family: custom, Arial, sans-serif;
-  margin-left: 1em;
+p,
+code,
+li {
+    font-family: custom, Arial, sans-serif;
+    margin-left: 1em;
 }
 
 h1 {
-  font-weight: 900;
+    font-weight: 900;
 }
 
 h2 {
-  font-weight: 900;
+    font-weight: 900;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #ffffff;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #ffffff;
 }
 
 p {
-  color: #ffffff;
+    color: #ffffff;
 }
 
-a, a:visited {
-  color: #ff82ec;
-  text-decoration: none;
-  font-size: inherit;
+a,
+a:visited {
+    color: #ff82ec;
+    text-decoration: none;
+    font-size: inherit;
 }
 
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 strong {
-  color: #ff0090;
+    color: #ff0090;
 }
 
 .border {
-  border-style: solid;
-  border-width: 2px;
+    border-style: solid;
+    border-width: 2px;
 }
 
 code {
-  border-radius: 5px;
+    border-radius: 5px;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 1em;
+    max-width: 100%;
+    height: auto;
+    border-radius: 1em;
 }
 
 .small-img {
-  max-width: 15em;
+    max-width: 15em;
 }
 
 .center-text {
-  text-align: center;
+    text-align: center;
 }
 
 @media screen and (min-width: 0px) {
-  h1 {
-    font-size: 6vw;
-  }
+    h1 {
+        font-size: 6vw;
+    }
 
-  h2 {
-    font-size: 5vw;
-  }
+    h2 {
+        font-size: 5vw;
+    }
 
-  h3 {
-    font-size: 4vw;
-  }
+    h3 {
+        font-size: 4vw;
+    }
 
-  code {
-    font-size: 3.5vw;
-  }
+    code {
+        font-size: 3.5vw;
+    }
 
-  body {
-    font-size: 3.5vw;
-  }
+    body {
+        font-size: 3.5vw;
+    }
 }
 
 @media screen and (min-width: 600px) {
-  h1 {
-    font-size: 5vw;
-  }
-  
-  h2 {
-    font-size: 4vw;
-  }
+    h1 {
+        font-size: 5vw;
+    }
 
-  h3 {
-    font-size: 3vw;
-  }
+    h2 {
+        font-size: 4vw;
+    }
 
-  code {
-    font-size: 2vw;
-  }
-  
-  body {
-    font-size: 2vw;
-  }
+    h3 {
+        font-size: 3vw;
+    }
+
+    code {
+        font-size: 2vw;
+    }
+
+    body {
+        font-size: 2vw;
+    }
 }
 
 @media screen and (min-width: 1000px) {
-  h1 {
-    font-size: 2.5vw;
-  }
-  
-  h2 {
-    font-size: 2vw;
-  }
+    h1 {
+        font-size: 2.5vw;
+    }
 
-  h3 {
-    font-size: 1.5vw;
-  }
+    h2 {
+        font-size: 2vw;
+    }
 
-  code {
-    font-size: 1vw;
-  }
-  
-  body {
-    font-size: 1vw;
-  }
+    h3 {
+        font-size: 1.5vw;
+    }
+
+    code {
+        font-size: 1vw;
+    }
+
+    body {
+        font-size: 1vw;
+    }
 }
