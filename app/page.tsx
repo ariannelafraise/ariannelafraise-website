@@ -3,7 +3,7 @@ import ProjectsList from "./components/projects-list";
 import Footer from "./components/footer";
 import type { Project } from "./models/project";
 import { fetchProjects } from "./lib/projectsUtils";
-import { fetchAllArt } from "./lib/artUtils";
+// import { fetchAllArt } from "./lib/artUtils";
 
 const getProjects = (): Array<Project> => {
   return fetchProjects();

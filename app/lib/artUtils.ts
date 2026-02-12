@@ -1,6 +1,6 @@
+/*
 import fs from "node:fs";
 
-/*
 export function fetchAllArt(): Array<string> {
   return fs
     .readdirSync("public/media/art")
