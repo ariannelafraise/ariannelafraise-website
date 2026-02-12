@@ -9,9 +9,9 @@
 }
 
 body {
-    background-color: #000000;
+    background-color: #ffffff;
     font-weight: normal;
-    color: #ffffff;
+    color: #000000;
     font-family: custom, monocode, sans-serif;
 }
 
@@ -41,16 +41,16 @@ h3,
 h4,
 h5,
 h6 {
-    color: #ffffff;
+    color: #000000;
 }
 
 p {
-    color: #ffffff;
+    color: #000000;
 }
 
 a,
 a:visited {
-    color: #ff82ec;
+    color: #000000;
     text-decoration: none;
     font-size: inherit;
 }
@@ -60,12 +60,13 @@ a:hover {
 }
 
 strong {
-    color: #ff0090;
+    color: #000000;
 }
 
 .border {
     border-style: solid;
     border-width: 2px;
+    border-radius: 1em;
 }
 
 code {

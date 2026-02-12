@@ -3,7 +3,6 @@ import ProjectsList from "./components/projects-list";
 import Footer from "./components/footer";
 import type { Project } from "./models/project";
 import { fetchProjects } from "./lib/projectsUtils";
-import ArtList from "./components/art-list";
 import { fetchAllArt } from "./lib/artUtils";
 
 const getProjects = (): Array<Project> => {
@@ -35,9 +34,9 @@ export default function Home() {
       ) : (
         <>
           <ProjectsList projects={projects.map((p: Project) => p.data)} />
-          <ArtList arts={arts} />
         </>
       )}
+      {/*<ArtList arts={arts} />*/}
       {/*
         <>
           <Banner title="🚧 Art section planned 🚧" message="I make photo composites and want to learn music production" color="#ffc824ff"/>
