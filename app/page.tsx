@@ -9,9 +9,11 @@ const getProjects = (): Array<Project> => {
   return fetchProjects();
 };
 
+/*
 const getArts = (): Array<string> => {
   return fetchAllArt();
 };
+*/
 
 export default function Home() {
   const projects: Array<Project> = getProjects();
