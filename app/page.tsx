@@ -15,7 +15,7 @@ const getArts = (): Array<string> => {
 
 export default function Home() {
   const projects: Array<Project> = getProjects();
-  const arts: Array<string> = getArts();
+  // const arts: Array<string> = getArts();
 
   return (
     <>
