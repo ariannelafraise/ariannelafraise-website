@@ -1,5 +1,6 @@
 import fs from "node:fs";
 
+/*
 export function fetchAllArt(): Array<string> {
   return fs
     .readdirSync("public/media/art")
@@ -11,3 +12,4 @@ export function fetchArt(id: string): string | undefined {
     .readdirSync("public/media/art")
     .find((fileName) => fileName.startsWith(id));
 }
+*/
