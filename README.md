@@ -1,6 +1,6 @@
 # Personal website
 
-Access it here: https://arianne.dev
+~~Access it here: https://arianne.dev~~ replaced by [this](https://github.com/ariannelafraise/portfolio)
 
 A website to showcase my projects.
 
