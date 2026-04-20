@@ -23,7 +23,7 @@ priority: 10 // To determine its position in the projects list
 # Very cool project
 this is my very cool project :D
 
-<img src="https://paintilya.dev/very-cool-image.png" alt="a very cool image"/>
+<img src="https://arianne.dev/very-cool-image.png" alt="a very cool image"/>
 
 ## Example
 - Hey 1
